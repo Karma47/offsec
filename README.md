@@ -99,7 +99,9 @@ and a lot more records found.
 
 -----------------------------------------------------------------------------------------------------------------------------
 #2 simple script 
+----------------
 $ cat dnszone.sh 
+
 --------------------------------------------------------
 #!/bin/bash
 for server in $(host -t ns annauniv.edu);
@@ -109,12 +111,15 @@ for server in $(host -t ns annauniv.edu);
 
 -----------------------------------------------------------------------------------------------------------------------------
 # 3 Extensive Script:
+--------------------
 $ cat dnszt.sh 
+
 -------------------------------------------------------
+
 #!/bin/bash
-# SImple zone transfer bash script
-# $1 is the first argument given after the bash script
-# check if argument was given, if not, print usage
+#SImple zone transfer bash script
+#$1 is the first argument given after the bash script
+#check if argument was given, if not, print usage
 
 if [ -z "$1" ];
  then
@@ -123,7 +128,7 @@ if [ -z "$1" ];
   exit 0
 fi
 
-# if argument was given, identify the DNS Servers for the domain.
+#if argument was given, identify the DNS Servers for the domain.
 
 for server in $(host -t ns $1);
  do
